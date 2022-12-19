@@ -251,3 +251,24 @@
 .loaded .santa span {
   transform: translate(0vh, 0px);
 }
+
+.loaded .santa__tree span {
+  transition: transform 2.5s ease 1.25s;
+}
+.loaded .santa__ball_one span {
+  transition: transform 2.4s ease 1.2s;
+}
+.loaded .santa__candy_one span {
+  transition: transform 2.3s ease 1.15s;
+}
+
+.loaded .santa__ball_two span {
+  transition: transform 2.2s ease 1.1s;
+}
+.loaded .santa__candy_two span {
+  transition: transform 2.1s ease 1.05s;
+}
+
+.loaded .santa__man span {
+  transition: transform 2s ease 1s;
+}

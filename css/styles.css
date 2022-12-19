@@ -1,3 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 .wrapper {
 }
 
@@ -5,13 +11,13 @@
 }
 
 .page::before {
-  content: "";
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../img/bg.webp") center/cover no-repeat;
+  background: url('../img/bg.webp') center/cover no-repeat;
 }
 
 .main-screen {
@@ -39,7 +45,7 @@
 .moon span {
   padding-bottom: 36%;
   height: auto;
-  background: url("../img/moon.webp") top/100% no-repeat;
+  background: url('../img/moon.webp') top/100% no-repeat;
 
   transform: translate(0px, -50%);
 }
@@ -51,15 +57,15 @@
 }
 
 .building__three span {
-  background: url(../img/building-03.webp) bottom/auto 100% repeat-x;
+  background: url(../img/building-03.webp) bottom/auto 100% no-repeat;
 }
 
 .building__two span {
-  background: url(../img/building-02.webp) bottom/auto 100% repeat-x;
+  background: url(../img/building-02.webp) bottom/auto 100% no-repeat;
 }
 
 .building__one span {
-  background: url(../img/building-01.webp) bottom/auto 100% repeat-x;
+  background: url(../img/building-01.webp) bottom/auto 100% no-repeat;
 }
 
 /* ---------------------------------------- */
@@ -128,7 +134,7 @@
 
 .efx::before,
 .efx::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -143,11 +149,7 @@
 }
 
 .efx::after {
-  background: linear-gradient(
-    50% 50% at 50% 50%,
-    rgba(4, 33, 58, 0) 0%,
-    #04213a 100%
-  );
+  background: linear-gradient(50% 50% at 50% 50%, rgba(4, 33, 58, 0) 0%, #04213a 100%);
   opacity: 0.5;
 }
 

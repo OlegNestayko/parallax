@@ -32,4 +32,80 @@ function windowLoad() {
     requestAnimationFrame(setParallaxAnimationStyle);
   }
   setParallaxAnimationStyle();
+
+  // Scroll parallax
+  const moon = document.querySelector('.moon');
+  const buildings = document.querySelectorAll('.building');
+  const tree = document.querySelector('.tree');
+  const stairs = document.querySelector('.stairs');
+  const train = document.querySelector('.train');
+  const santaItems = document.querySelectorAll('.santa');
+
+  window.addEventListener('scroll', createPosition);
+  createPosition();
+
+  function createPosition() {
+    const contentElement = document.querySelector('.content__container');
+    const windowHeight = window.innerHeight;
+    const finalPos = (scrollY / (contentElement.offsetTop - windowHeight)) * 100;
+    finalPos < 100 ? christmasAnimation(finalPos) : christmasAnimation(100);
+  }
+
+  function christmasAnimation(finalPos) {
+    const moonAnim = {
+      translate: (50 / 100) * finalPos,
+      scale: 1 + (2 / 100) * finalPos,
+    };
+    moon.style.cssText = `
+	  transform:
+	 	translate(0,${moonAnim.translate}%)
+		scale(${moonAnim.scale}) 
+	  `;
+
+    const stairsAnim = {
+      translate: (70 / 100) * finalPos,
+      scale: 1 + (2 / 100) * finalPos,
+    };
+    stairs.style.cssText = `
+	  transform:
+	 	translate(0,${stairsAnim.translate}%)
+		scale(${stairsAnim.scale}) 
+	  `;
+
+    const treeAnim = {
+      translate: (70 / 100) * finalPos,
+      scale: 1 + (1.5 / 100) * finalPos,
+    };
+    tree.style.cssText = `
+	  transform:
+	 	translate(0,${treeAnim.translate}%)
+		scale(${treeAnim.scale}) 
+	  `;
+
+    buildings.forEach((building, index) => {
+      const buildingAmin = {
+        translate: ((30 * (buildings.length - index)) / 100) * finalPos,
+        scale: 1 + (2 / 100) * finalPos,
+      };
+      building.style.cssText = `
+	  transform:
+	 	translate(0,${buildingAmin.translate}%)
+		scale(${buildingAmin.scale}) 
+	  `;
+    });
+    const trainAnim = {
+      translate: 1 * finalPos,
+    };
+    train.style.cssText = `
+	  transform:
+	 	translate(-${trainAnim.translate}%,${trainAnim.translate}%)
+		`;
+
+    santaItems.forEach((santaItem, index) => {
+      const santaAnim = {
+        left: ((100 + 10 * index) / 100) * finalPos,
+      };
+      santaItem.style.left = `${santaAnim.left}%`;
+    });
+  }
 }
